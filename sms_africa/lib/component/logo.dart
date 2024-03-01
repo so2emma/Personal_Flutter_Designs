@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sms_africa/constants.dart';
 
 class Logo extends StatelessWidget {
   const Logo({
@@ -12,7 +13,7 @@ class Logo extends StatelessWidget {
       children: [
         Icon(
           Icons.mail_outline,
-          color: Color(0xFFDA1212),
+          color: kRedColor,
         ),
         SizedBox(
           width: 5.0,
@@ -20,7 +21,7 @@ class Logo extends StatelessWidget {
         Text(
           'SMS',
           style: TextStyle(
-              color: Color(0xFF041562),
+              color: kDarkBlueColor,
               fontSize: 30.0,
               fontWeight: FontWeight.w700),
         ),
@@ -30,9 +31,7 @@ class Logo extends StatelessWidget {
         Text(
           'AFRICA',
           style: TextStyle(
-              color: Color(0xFFDA1212),
-              fontSize: 30.0,
-              fontWeight: FontWeight.w700),
+              color: kRedColor, fontSize: 30.0, fontWeight: FontWeight.w700),
         ),
       ],
     );

@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+//Application Custom Colors
+const kDarkBlueColor = Color(0xFF041562);
+const kRedColor = Color(0xFFDA1212);
+const kLightBlueColor = Color(0xFF11468F);
+const kWhiteLight = Color(0xFFEEEEEE);
+
 const kInputDecoration = InputDecoration(
   labelText: 'Email',
   hintText: "Enter email",

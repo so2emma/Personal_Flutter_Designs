@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sms_africa/component/logo.dart';
 import 'package:sms_africa/constants.dart';
+import 'package:sms_africa/screens/dashboard_screen.dart';
 import 'package:sms_africa/screens/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.only(bottom: 20.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.pushNamed(context,)
+                    Navigator.pushNamed(context, DashboardScreen.id);
                   },
                   child: Text(
                     "Login",

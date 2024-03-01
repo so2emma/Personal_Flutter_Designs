@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menu/constants.dart';
+import 'package:menu/screens/homeScreen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -56,7 +57,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 40.0, horizontal: 40.0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, HomeScreen.id);
+                      },
                       child: const Text(
                         "Get Started",
                         style: TextStyle(
