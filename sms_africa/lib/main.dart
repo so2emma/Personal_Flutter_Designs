@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
         DashboardScreen.id: (context) => DashboardScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         LoginScreen.id: (context) => LoginScreen(),
-        DashboardScreen.id: (context) => DashboardScreen(),
       },
       home: WelcomeScreen(),
     );
