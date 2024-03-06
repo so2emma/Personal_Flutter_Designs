@@ -63,6 +63,8 @@ class _DetailPageState extends State<DetailPage> {
                             setState(() {
                               bool isFavorited = toggleIsFavorated(
                                   _plantList[widget.plantId].isFavorated);
+                              _plantList[widget.plantId].isFavorated =
+                                  isFavorited;
                             });
                           },
                           icon: Icon(
