@@ -11,13 +11,18 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  bool toggleIsFavorated(bool isFavorited) {
+    return !isFavorited;
+  }
+
+  bool toggleSelected(bool isSelected) {
+    return !isSelected;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     List<Plant> _plantList = Plant.plantList;
-    bool toggleIsFavorated(bool isFavorited) {
-      return !isFavorited;
-    }
 
     return Scaffold(
       // appBar: AppBar(
@@ -211,9 +216,21 @@ class _DetailPageState extends State<DetailPage> {
             Container(
               height: 50,
               width: 50,
-              child: Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
+              child: IconButton(
+                onPressed: () {
+                  setState(() {
+                    bool isSelected =
+                        toggleSelected(_plantList[widget.plantId].isSelected);
+
+                    _plantList[widget.plantId].isSelected = isSelected;
+                  });
+                },
+                icon: Icon(
+                  Icons.shopping_cart,
+                  color: _plantList[widget.plantId].isSelected == true
+                      ? Colors.white
+                      : Constants.primaryColor,
+                ),
               ),
               decoration: BoxDecoration(
                   color: Constants.primaryColor.withOpacity(.5),
@@ -222,7 +239,9 @@ class _DetailPageState extends State<DetailPage> {
                     BoxShadow(
                       offset: Offset(0, 1),
                       blurRadius: 5,
-                      color: Constants.primaryColor.withOpacity(.3),
+                      color: _plantList[widget.plantId].isSelected == true
+                          ? Constants.primaryColor.withOpacity(.5)
+                          : Colors.white,
                     )
                   ]),
             ),
