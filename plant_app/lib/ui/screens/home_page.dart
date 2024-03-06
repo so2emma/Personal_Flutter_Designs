@@ -40,13 +40,16 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   width: size.width * .9,
+                  decoration: BoxDecoration(
+                      color: Constants.primaryColor.withOpacity(.1),
+                      borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -69,21 +72,18 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  decoration: BoxDecoration(
-                      color: Constants.primaryColor.withOpacity(.1),
-                      borderRadius: BorderRadius.circular(20)),
                 )
               ],
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             height: 50.0,
             width: size.width,
             child: ListView.builder(
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
@@ -128,7 +128,10 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: Container(
                     width: 200,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    decoration: BoxDecoration(
+                        color: Constants.primaryColor.withOpacity(.8),
+                        borderRadius: BorderRadius.circular(20)),
                     child: Stack(
                       children: [
                         Positioned(
@@ -175,12 +178,12 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Text(
                                   _plantList[index].category,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white, fontSize: 16),
                                 ),
                                 Text(
                                   _plantList[index].plantName,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.white70,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -192,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                             bottom: 15,
                             right: 20,
                             child: Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 2),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -207,17 +210,14 @@ class _HomePageState extends State<HomePage> {
                             ))
                       ],
                     ),
-                    decoration: BoxDecoration(
-                        color: Constants.primaryColor.withOpacity(.8),
-                        borderRadius: BorderRadius.circular(20)),
                   ),
                 );
               },
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 16, bottom: 20, top: 20),
-            child: Text(
+            padding: const EdgeInsets.only(left: 16, bottom: 20, top: 20),
+            child: const Text(
               'New Plants',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -227,12 +227,12 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             height: size.height * .5,
             child: ListView.builder(
                 itemCount: _plantList.length,
                 scrollDirection: Axis.vertical,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   return PlantWidget(
                     index: index,
