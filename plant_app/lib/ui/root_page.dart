@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/models/plants.dart';
-import 'package:plant_app/ui/login_page.dart';
+import 'package:plant_app/ui/sign_in_page.dart';
 import 'package:plant_app/ui/screens/cart_page.dart';
 import 'package:plant_app/ui/screens/favourite_page.dart';
 import 'package:plant_app/ui/screens/home_page.dart';

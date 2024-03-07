@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
-import 'package:plant_app/ui/login_page.dart';
+import 'package:plant_app/ui/sign_in_page.dart';
 import 'package:plant_app/ui/root_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -24,8 +24,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: EdgeInsets.only(right: 20.0, top: 20.0),
             child: InkWell(
               onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (_) => const RootPage()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => const SignIn()));
               },
               child: const Text(
                 'Skip',
@@ -94,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       }
                     } else {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => const RootPage()));
+                          MaterialPageRoute(builder: (_) => const SignIn()));
                     }
                   });
                 },
